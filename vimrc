@@ -118,6 +118,7 @@ au FileType cpp map <F9> :!g++ -W -Wall % -o %< -g <CR>
 
 " F11 execute
 if has("gui_running")
+	au FileType dosbatch map <F11> :!% <CR>
 	au FileType c,cpp map <F11> :!%< <CR>
 elseif has("unix")
 	au FileType c,cpp map <F11> :!./%< <CR>
