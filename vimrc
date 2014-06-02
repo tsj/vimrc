@@ -121,6 +121,7 @@ if has("gui_running")
 	au FileType dosbatch map <F11> :!% <CR>
 	au FileType c,cpp map <F11> :!%< <CR>
 elseif has("unix")
+	au FileType sh map <F11> :!./% <CR>
 	au FileType c,cpp map <F11> :!./%< <CR>
 endif
 au FileType ruby map <F11> :!ruby % <CR>
