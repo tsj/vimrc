@@ -43,6 +43,9 @@ set statusline+=\ "separator
 " style : [ruby]
 set statusline+=%y "syntax
 
+" style : (master)
+set statusline+=%{GitBranch()?\"\":\"\ \(\".GitBranch().\"\)\"}
+
 set statusline+=%=
 
 set statusline+=%l-%L:
