@@ -7,3 +7,4 @@ vimrc
 * matchit.vim
 * python_match.vim
 * nerdtree.vim
+* fugitive.vim
