@@ -43,9 +43,11 @@ set statusline+=\ "separator
 " style : [ruby]
 set statusline+=%y "syntax
 
+set statusline+=\ "separator
+
 " style : (master)
 set statusline+=(
-set statusline+=%{\"fugitive#head()\"}
+set statusline+=%{fugitive#head()}
 set statusline+=)
 
 set statusline+=%=
