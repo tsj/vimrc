@@ -133,7 +133,7 @@ elseif has("unix")
 endif
 au FileType ruby map <F11> :!ruby % <CR>
 au FileType python map <F11> :!python % <CR>
-au FileType python setlocal ts=4 sts=4 sw=4
+au FileType python set tabstop=4 expandtab shiftwidth=4 softtabstop=4
 
 " F12 debug
 au FileType c,cpp map <F12> :!gdb -q %< <CR>
