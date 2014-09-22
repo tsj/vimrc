@@ -104,12 +104,18 @@ set ffs=unix,dos,mac
 
 " GUI
 if has("gui_running")
-	set guioptions+=b
-	set guifont=DejaVu_Sans_Mono:h14
-	set clipboard=unnamed "connect clipboard 
-	source $VIMRUNTIME/vimrc_example.vim
-	source $VIMRUNTIME/mswin.vim
-	behave mswin
+	if has("gui_win32")
+		set guioptions+=b
+		set guifont=DejaVu_Sans_Mono:h14
+		set clipboard=unnamed "share clipboard 
+		source $VIMRUNTIME/vimrc_example.vim
+		source $VIMRUNTIME/mswin.vim
+		behave mswin
+	elseif has("gui_macvim")
+		set guioptions+=b
+		set guifont=Menlo:h20
+		set clipboard=unnamed "share clipboard 
+	endif
 endif
 
 " Map
@@ -125,12 +131,18 @@ au FileType cpp map <F9> :!g++ -W -Wall % -o %< -g <CR>
 
 " F11 execute
 if has("gui_running")
-	au FileType dosbatch map <F11> :!% <CR>
-	au FileType c,cpp map <F11> :!%< <CR>
+	if has("gui_win32")
+		au FileType dosbatch map <F11> :!% <CR>
+		au FileType c,cpp map <F11> :!%< <CR>
+		au FileType html map <F11> :!explorer % <CR>
+	elseif has("gui_macvim")
+		au FileType html map <F11> :!open -a /Applications/Safari.app % <CR>
+	endif
 elseif has("unix")
 	au FileType sh map <F11> :!./% <CR>
 	au FileType c,cpp map <F11> :!./%< <CR>
 endif
+
 au FileType ruby map <F11> :!ruby % <CR>
 au FileType python map <F11> :!python % <CR>
 au FileType python set tabstop=4 expandtab shiftwidth=4 softtabstop=4
