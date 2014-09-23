@@ -123,7 +123,11 @@ map <F3> v]}zf
 map <F4> zo
 
 "F5 : NERDTree
-map <F5> :NERDTreeToggle <CR>
+map <F5> :tabe <BAR> :NERDTreeToggle <CR>
+let NERDTreeQuitOnOpen=1
+
+"F6 : close tab
+map <F6> :tabclose <CR>
 
 "F9 : compile
 au FileType c map <F9> :!gcc -W -Wall % -o %< -g <CR>
