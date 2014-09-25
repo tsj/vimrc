@@ -119,6 +119,11 @@ if has("gui_running")
 endif
 
 " Map
+" reference: http://blog.dokenzy.com/archives/1700
+" for splitting
+noremap <TAB><TAB> <C-w><C-w>
+
+" map function keys
 map <F3> v]}zf
 map <F4> zo
 
@@ -128,6 +133,12 @@ let NERDTreeQuitOnOpen=1
 
 "F6 : close tab
 map <F6> :tabclose <CR>
+
+"F7 : horizontal splitting
+map <F7> :sp <CR>
+
+"F8 : vertical splitting
+map <F8> :vs <CR>
 
 "F9 : compile
 au FileType c map <F9> :!gcc -W -Wall % -o %< -g <CR>
