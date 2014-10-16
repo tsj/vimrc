@@ -162,6 +162,7 @@ au FileType ruby map <F11> :!ruby % <CR>
 au FileType ruby set tabstop=2 expandtab shiftwidth=2 softtabstop=2
 au FileType python map <F11> :!python % <CR>
 au FileType python set tabstop=4 expandtab shiftwidth=4 softtabstop=4
+au FileType php set tabstop=4 expandtab shiftwidth=4 softtabstop=4
 
 " F12 debug
 au FileType c,cpp map <F12> :!gdb -q %< <CR>
